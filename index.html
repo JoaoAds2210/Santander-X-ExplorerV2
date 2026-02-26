@@ -913,15 +913,7 @@
       document.getElementById('mobileMenu').classList.toggle('open');
     }
 
-    // Typeform submit detection
-    window.addEventListener('message', function(event) {
-      if (event.data && event.data.type === 'form-submit') {
-        document.getElementById('form-wrapper').style.display = 'none';
-        const msg = document.getElementById('thank-you-msg');
-        msg.style.display = 'block';
-        msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    });
+
 
     // Scroll fade-in
     document.querySelectorAll('.fade-in').forEach(el => {
@@ -936,5 +928,56 @@
     });
   </script>
 
+  <script>
+    // Typeform submit detection
+    // Method 1: postMessage (Typeform's official event)
+    window.addEventListener('message', function(event) {
+      if (!event.data) return;
+      try {
+        const data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
+        if (
+          data.type === 'form-submit' ||
+          data.type === 'typeform:submit' ||
+          (data.source === 'typeform-embed-sdk' && data.type === 'form-submit')
+        ) {
+          showThankYou();
+        }
+      } catch(e) {}
+    });
+
+    // Method 2: fallback — detect iframe URL change after submit
+    // Typeform redirects the iframe to a thank-you page on submit
+    var iframe = null;
+    var checkInterval = null;
+
+    window.addEventListener('DOMContentLoaded', function() {
+      iframe = document.getElementById('typeform-iframe');
+
+      // Poll iframe height — after submit, Typeform shows a small thank-you screen
+      var prevHeight = 600;
+      checkInterval = setInterval(function() {
+        try {
+          // If iframe shrinks significantly, Typeform submitted
+          var h = iframe.contentWindow.document.body.scrollHeight;
+          if (h < 200 && prevHeight > 400) {
+            showThankYou();
+          }
+          prevHeight = h;
+        } catch(e) {
+          // cross-origin blocks direct access — that's expected
+        }
+      }, 1000);
+    });
+
+    function showThankYou() {
+      if (checkInterval) clearInterval(checkInterval);
+      var wrapper = document.getElementById('form-wrapper');
+      if (wrapper.style.display === 'none') return; // already shown
+      wrapper.style.display = 'none';
+      var msg = document.getElementById('thank-you-msg');
+      msg.style.display = 'block';
+      msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  </script>
 </body>
 </html>
