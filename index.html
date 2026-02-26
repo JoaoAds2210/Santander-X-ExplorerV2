@@ -160,7 +160,6 @@
         radial-gradient(ellipse at 10% 80%, rgba(26,63,170,0.25) 0%, transparent 50%);
     }
 
-    /* Decorative circles */
     #hero::after {
       content: '';
       position: absolute;
@@ -461,9 +460,7 @@
       transform: translateY(-2px);
     }
 
-    .member-photo {
-      flex-shrink: 0;
-    }
+    .member-photo { flex-shrink: 0; }
 
     .member-photo img {
       width: 140px;
@@ -534,8 +531,7 @@
 
     .form-intro .section-title { color: white; }
     .form-intro .section-label { color: #93b8ff; }
-    .form-intro .section-desc {
-      text-align: justify; color: rgba(255,255,255,0.6); }
+    .form-intro .section-desc { text-align: justify; color: rgba(255,255,255,0.6); }
 
     .form-benefits {
       margin-top: 40px;
@@ -562,93 +558,9 @@
     .form-box {
       background: rgba(255,255,255,0.97);
       border-radius: 20px;
-      padding: 44px;
+      padding: 12px;
       box-shadow: 0 30px 80px rgba(0,0,0,0.3);
-    }
-
-    .form-box h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      color: var(--navy);
-      margin-bottom: 28px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 18px;
-    }
-
-    .form-group label {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 6px;
-      letter-spacing: 0.2px;
-    }
-
-    .form-group input,
-    .form-group select {
-      padding: 11px 14px;
-      border-radius: 8px;
-      border: 1.5px solid #D8DFF0;
-      font-size: 0.92rem;
-      font-family: 'DM Sans', sans-serif;
-      color: var(--text);
-      background: var(--white);
-      transition: border-color 0.2s, box-shadow 0.2s;
-      appearance: none;
-      -webkit-appearance: none;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(59,126,255,0.12);
-    }
-
-    .checkbox-group {
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-    }
-
-    .checkbox-group label {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      font-size: 0.88rem;
-      font-weight: 400;
-      color: var(--text);
-      cursor: pointer;
-    }
-
-    .checkbox-group input[type="checkbox"] {
-      width: 16px; height: 16px;
-      cursor: pointer;
-      accent-color: var(--accent);
-    }
-
-    .btn-submit {
-      width: 100%;
-      padding: 14px;
-      margin-top: 8px;
-      background: linear-gradient(135deg, var(--accent), var(--blue));
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-size: 0.98rem;
-      font-weight: 700;
-      font-family: 'DM Sans', sans-serif;
-      cursor: pointer;
-      letter-spacing: 0.3px;
-      transition: all 0.3s ease;
-    }
-
-    .btn-submit:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(59,126,255,0.4);
+      overflow: hidden;
     }
 
     /* ─── FOOTER ─── */
@@ -693,8 +605,7 @@
         text-align: center;
       }
 
-      .hero-text p {
-      text-align: justify; margin: 0 auto 28px; }
+      .hero-text p { text-align: justify; margin: 0 auto 28px; }
       .hero-badge { display: inline-block; }
       .hero-image { flex: none; width: 100%; }
       .hero-img-main { max-width: 300px; }
@@ -719,28 +630,18 @@
       }
 
       .form-box {
-        padding: 28px 20px;
-      }
-
-      .form-layout {
-        gap: 32px;
-      }
-
-      .form-benefits {
-        margin-top: 24px;
-        gap: 10px;
-      }
-
-      .hero-cta { width: 100%; text-align: center; }
-
-      #formulario .container {
-        padding: 0 16px;
-      }
-
-      .form-box {
+        padding: 8px;
         width: 100%;
         overflow: hidden;
       }
+
+      .form-layout { gap: 32px; }
+
+      .form-benefits { margin-top: 24px; gap: 10px; }
+
+      .hero-cta { width: 100%; text-align: center; }
+
+      #formulario .container { padding: 0 16px; }
     }
 
     @media (max-width: 480px) {
@@ -750,54 +651,15 @@
       #formulario { padding: 48px 0; }
 
       .form-box {
-        padding: 22px 16px;
+        padding: 4px;
         border-radius: 14px;
       }
 
-      .form-box h3 {
-        font-size: 1.15rem;
-        margin-bottom: 20px;
-      }
+      .form-intro .section-title { font-size: 1.45rem; }
+      .form-intro .section-desc { font-size: 0.9rem; }
+      .benefit-item { font-size: 0.85rem; }
 
-      .form-group {
-        margin-bottom: 14px;
-      }
-
-      .form-group label {
-        font-size: 0.78rem;
-        white-space: normal;
-        word-break: break-word;
-      }
-
-      .form-group input,
-      .form-group select {
-        padding: 10px 12px;
-        font-size: 0.88rem;
-      }
-
-      .btn-submit {
-        padding: 13px;
-        font-size: 0.92rem;
-      }
-
-      .form-intro .section-title {
-        font-size: 1.45rem;
-      }
-
-      .form-intro .section-desc {
-        font-size: 0.9rem;
-      }
-
-      .benefit-item {
-        font-size: 0.85rem;
-      }
-
-      .checkbox-group label {
-        font-size: 0.82rem;
-      }
-      .form-box iframe {
-        height: 500px;
-      }
+      .form-box iframe { height: 520px; }
     }
   </style>
 </head>
@@ -850,7 +712,6 @@
           <p class="section-desc">
             A Maná nasceu com um objetivo claro: preparar profissionais da saúde para as transformações que já estão acontecendo no mercado.
           </p>
-
           <div class="proposito-pillars">
             <div class="pillar">
               <div class="pillar-icon">🧠</div>
@@ -964,6 +825,7 @@
   <section id="formulario">
     <div class="container">
       <div class="form-layout">
+
         <div class="form-intro fade-in">
           <p class="section-label">Participe</p>
           <h2 class="section-title">Ajude a moldar essa iniciativa</h2>
@@ -977,19 +839,51 @@
         </div>
 
         <div class="form-box fade-in" style="transition-delay:0.15s">
-      <iframe
-        src="https://form.typeform.com/to/SSM9ZcZx"
-        style="width:100%; height:600px; border:none; border-radius:12px;"
-        allow="camera; microphone; autoplay; encrypted-media;"
-      ></iframe>
+          <iframe
+            src="https://form.typeform.com/to/SSM9ZcZx"
+            style="width:100%; height:600px; border:none; border-radius:12px;"
+            allow="camera; microphone; autoplay; encrypted-media;"
+          ></iframe>
+        </div>
+
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
     <div class="container">
-      <p>© 2026 Maná  — Saúde 4.0. </p>
+      <p>© 2026 Maná — Saúde 4.0.</p>
     </div>
   </footer>
+
+  <script>
+    // Nav scroll
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.style.background = window.scrollY > 60
+        ? 'rgba(5, 10, 60, 0.92)'
+        : 'rgba(5, 10, 60, 0.35)';
+    });
+
+    // Hamburger menu
+    function toggleMenu() {
+      document.getElementById('hamburger').classList.toggle('open');
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+
+    // Scroll fade-in
+    document.querySelectorAll('.fade-in').forEach(el => {
+      new IntersectionObserver((entries, obs) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 }).observe(el);
+    });
+  </script>
+
 </body>
 </html>
