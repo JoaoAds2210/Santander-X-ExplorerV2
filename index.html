@@ -795,6 +795,9 @@
       .checkbox-group label {
         font-size: 0.82rem;
       }
+      .form-box iframe {
+        height: 500px;
+      }
     }
   </style>
 </head>
@@ -974,98 +977,11 @@
         </div>
 
         <div class="form-box fade-in" style="transition-delay:0.15s">
-          <h3>Preencha o formulário</h3>
-          <form id="taskForm">
-
-            <div class="form-group">
-              <label for="objetivo">Qual é o seu maior objetivo profissional?</label>
-              <select id="objetivo" name="objetivo" required>
-                <option value="">Selecione</option>
-                <option value="abrir_consultorio">Abrir meu próprio consultório ou clínica particular.</option>
-                <option value="melhorar_gestao">Melhorar a gestão do meu negócio atual.</option>
-                <option value="migrar_healthtech">Migrar para o mercado de tecnologia em saúde (Healthtechs).</option>
-                <option value="inovar_carreira">Entender como inovar na carreira ou dentro da instituição.</option>
-                <option value="decidindo_caminho">Ainda estou decidindo meu caminho.</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="dominarHabilidade">Qual habilidade você quer dominar para acelerar sua carreira?</label>
-              <select id="dominarHabilidade" name="dominarHabilidade" required>
-                <option value="">Selecione</option>
-                <option value="gestao_negocios">Gestão e Negócios</option>
-                <option value="inovacao_tecnologia">Inovação e Tecnologia</option>
-                <option value="ambas">As duas opções me interessam igualmente</option>
-                <option value="nenhuma">Nenhuma das anteriores</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="medoProfissional">Qual é o seu maior "medo" profissional atualmente?</label>
-              <select id="medoProfissional" name="medoProfissional" required>
-                <option value="">Selecione</option>
-                <option value="depender_plantoes">Depender apenas de plantões ou convênios</option>
-                <option value="ficar_para_tras_tecnologia">Ficar para trás tecnologicamente</option>
-                <option value="nao_saber_gerir">Não saber gerir finanças e marketing</option>
-                <option value="nao_conseguir_emprego">Não conseguir emprego ou boa renda</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="avisoWorkshop">Gostaria de ser avisado de um workshop gratuito?</label>
-              <select id="avisoWorkshop" name="avisoWorkshop" required>
-                <option value="">Selecione</option>
-                <option value="sim">Sim, com certeza</option>
-                <option value="talvez">Talvez, dependendo da data</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label>O que mais te impede de avançar hoje? (Máximo: 2)</label>
-              <div class="checkbox-group">
-                <label><input type="checkbox" name="impedimentoAvancar" value="conhecimento"> Falta de conhecimento</label>
-                <label><input type="checkbox" name="impedimentoAvancar" value="tecnologia"> Dificuldade com tecnologia</label>
-                <label><input type="checkbox" name="impedimentoAvancar" value="risco"> Medo do risco</label>
-                <label><input type="checkbox" name="impedimentoAvancar" value="tempo"> Falta de tempo</label>
-                <label><input type="checkbox" name="impedimentoAvancar" value="inicio"> Não sei por onde começar</label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="areaAtuacao">Em que área da saúde você atua?</label>
-              <select id="areaAtuacao" name="areaAtuacao" required>
-                <option value="">Selecione</option>
-                <option value="medicina">Medicina</option>
-                <option value="enfermagem">Enfermagem</option>
-                <option value="fisioterapia">Fisioterapia</option>
-                <option value="odontologia">Odontologia</option>
-                <option value="fonoaudiologia">Fonoaudiologia</option>
-                <option value="biomedicina_farmacia">Biomedicina/Farmácia</option>
-                <option value="educacao_fisica_nutricao">Educação Física/Nutrição</option>
-                <option value="terapia_psicologia">Terapia Ocupacional/Psicologia</option>
-                <option value="outra">Outra</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="idade">Idade</label>
-              <input id="idade" name="idade" type="number" placeholder="Digite sua idade" min="1" max="120" required>
-            </div>
-
-            <div class="form-group">
-              <label for="nome">Seu nome</label>
-              <input id="nome" name="nome" type="text" placeholder="Digite aqui o seu nome" required>
-            </div>
-
-            <div class="form-group">
-              <label for="email">E-mail ou WhatsApp</label>
-              <input id="email" name="email" type="text" placeholder="Digite aqui seu e-mail ou WhatsApp" required>
-            </div>
-
-            <button type="submit" class="btn-submit">Enviar e garantir acesso →</button>
-          </form>
-        </div>
-      </div>
+      <iframe
+        src="https://form.typeform.com/to/SSM9ZcZx"
+        style="width:100%; height:600px; border:none; border-radius:12px;"
+        allow="camera; microphone; autoplay; encrypted-media;"
+      ></iframe>
     </div>
   </section>
 
@@ -1075,80 +991,5 @@
       <p>© 2026 Maná  — Saúde 4.0. </p>
     </div>
   </footer>
-
-  <script>
-    // Nav scroll behavior
-    const nav = document.querySelector('nav');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 60) {
-        nav.style.background = 'rgba(5, 10, 60, 0.92)';
-      } else {
-        nav.style.background = 'rgba(5, 10, 60, 0.35)';
-      }
-    });
-
-    // Hamburger menu
-    function toggleMenu() {
-      document.getElementById('hamburger').classList.toggle('open');
-      document.getElementById('mobileMenu').classList.toggle('open');
-    }
-
-    // Checkbox limit
-    document.querySelectorAll('input[name="impedimentoAvancar"]').forEach(cb => {
-      cb.addEventListener('change', () => {
-        const checked = document.querySelectorAll('input[name="impedimentoAvancar"]:checked');
-        if (checked.length > 2) {
-          cb.checked = false;
-          alert('Você pode selecionar no máximo duas opções.');
-        }
-      });
-    });
-
-    // Scroll fade-in
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    // Form submit
-    document.getElementById('taskForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const formData = new FormData(e.target);
-      const payload = {
-        objetivo: formData.get('objetivo'),
-        dominarHabilidade: formData.get('dominarHabilidade'),
-        medoProfissional: formData.get('medoProfissional'),
-        avisoWorkshop: formData.get('avisoWorkshop'),
-        impedimentoAvancar: formData.getAll('impedimentoAvancar'),
-        areaAtuacao: formData.get('areaAtuacao'),
-        idade: formData.get('idade'),
-        nome: formData.get('nome'),
-        email: formData.get('email')
-      };
-      try {
-        const response = await fetch('http://localhost:8080/api/cadastros', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-        if (response.ok) {
-          alert('Cadastro realizado com sucesso!');
-          e.target.reset();
-        } else {
-          alert('Erro ao enviar. Verifique o console.');
-        }
-      } catch (err) {
-        console.error(err);
-        alert('Não foi possível conectar ao servidor.');
-      }
-    });
-  </script>
-
 </body>
 </html>
